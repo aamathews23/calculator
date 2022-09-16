@@ -11,19 +11,19 @@ fn main() {
   let second_num = second.parse::<f32>().unwrap();
   let result = operate(operator, first_num, second_num);
 
-  println!("{:?}", result);
+  println!("{:?}", output(first_num, operator, second_num, result));
 }
 
 fn operate(operator: char, first_num: f32, second_num: f32) -> f32 {
-  if operator == '+' {
-    first_num + second_num
-  } else if operator == '-' {
-    first_num - second_num
-  } else if operator == '/' {
-    first_num / second_num
-  } else if operator == '*' {
-    first_num * second_num
-  } else {
-    0.0
+  match operator {
+    '+' => first_num + second_num,
+    '-' => first_num - second_num,
+    '/' => first_num / second_num,
+    '*' => first_num * second_num,
+    _ => 0.0
   }
+}
+
+fn output(first_num: f32, operator: char, second_num: f32, result: f32) -> String {
+  format!("{} {} {} = {}", first_num, operator, second_num, result)
 }
