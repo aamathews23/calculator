@@ -12,3 +12,15 @@ fn main() {
 
   println!("{:?} {} {}", first, operator, second);
 }
+
+fn operator(operator: char, first_num: f32, second_num: f32) -> f32 {
+  if operator == '+' {
+    return first_num + second_num;
+  } else if operator == '-' {
+    return first_num - second_num;
+  } else if operator == '/' {
+    return first_num / second_num;
+  } else {
+    return first_num * second_num;
+  }
+}
